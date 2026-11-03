@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Data & run outputs (not tracked)
+data/
+result/
+log/
+path_preprocess_st/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Cursor local
+.specstory/
+.cursorindexingignore
+
