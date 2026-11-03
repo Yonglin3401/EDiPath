@@ -120,6 +120,11 @@ DATASET_PLOT_DEFAULTS = {
         n_clusters=6,
         label_key=None,
     ),
+    "Breast_cancer": dict(
+        spot_fill=0.8,
+        n_clusters=20,
+        label_key="fine_annot_type",
+    ),
 }
 
 

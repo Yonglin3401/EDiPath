@@ -128,7 +128,8 @@ if __name__ == "__main__":
 
     if not args.synthetic and not args.h5ad_path and not args.dataset:
         raise SystemExit(
-            "Provide --dataset CNS3|DPI_2dpi (preset), or --h5ad_path / --synthetic 1"
+            "Provide --dataset CNS3|DPI_2dpi|151673|Breast_cancer (preset), "
+            "or --h5ad_path / --synthetic 1"
         )
 
     now = datetime.datetime.now()

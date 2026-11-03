@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import os
 
+_REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_ROOT = os.environ.get("EDI_PATH_DATA_ROOT", "./data")
 
 # Default DEC block (shared by the presets below).
@@ -102,6 +103,34 @@ DATASET_PRESETS = {
         "dec_epochs": 100,
         "dec_kl_w": 0.05,
         "dec_n_clusters": 7,
+        "plateau_patience": 35,
+    },
+    # 10x Visium breast cancer (example .h5ad under datasets/); fine_annot_type (20 classes).
+    "Breast_cancer": {
+        "h5ad_path": os.path.join(_REPO_ROOT, "datasets", "Breast_cancer.h5ad"),
+        "dataset_key": "Breast_cancer",
+        "label_key": "fine_annot_type",
+        "n_clusters": 20,
+        "use_rep": "X_pca",
+        "n_pcs": 50,
+        "spot_fill": 0.8,
+        "spatial_k": 6,
+        "gene_k": 4,
+        "walk_time": 5,
+        "walk_len": 5,
+        "walk_q": 0.3,
+        "hidden_dim": 64,
+        "hidden_att_dim": 32,
+        "dropout": 0.2,
+        "tau_quantile": 0.3,
+        "use_homogeneity_weight": 1,
+        "lr": 1e-3,
+        "force_n_clusters": 1,
+        "cluster_eval": 1,
+        **_DEFAULT_DEC,
+        "dec_epochs": 100,
+        "dec_kl_w": 0.05,
+        "dec_n_clusters": 20,
         "plateau_patience": 35,
     },
 }
